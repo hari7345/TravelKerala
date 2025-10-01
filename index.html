@@ -35,6 +35,25 @@
 
 <!-- template styles -->
 <link rel="stylesheet" href="assets/css/travhub.css" />
+
+<!-- Custom smooth scrolling styles -->
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add some padding to sections to account for fixed header */
+section {
+    scroll-margin-top: 100px;
+}
+
+/* Smooth scroll animation for better user experience */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+</style>
 </head>
 
 <body class="custom-cursor">
@@ -79,7 +98,7 @@
 	        </div><!-- /.topbar-one__inner -->
 	    </div><!-- /.container-fluid -->
 	</div><!-- /.topbar-one -->
-	<header class="main-header sticky-header sticky-header--normal">
+		<header class="main-header sticky-header sticky-header--normal">
 	    <div class="container">
 	        <div class="main-header__inner">
 	            <div class="main-header__logo">
@@ -98,7 +117,7 @@
 								<li><a href="index3.html">Home Three</a></li>
 							</ul> -->
 						</li>
-						<li>
+						<!-- <li>
 							<a href="about.html">About</a>
 						</li>
 						<li class="dropdown">
@@ -111,8 +130,8 @@
 								<li><a href="login.html">Login</a></li>
 								<li><a href="404.html">404 Error</a></li>
 							</ul>
-						</li>
-						<li class="dropdown">
+						</li> -->
+						<!-- <li class="dropdown">
 							<a href="#">Tours</a>
 							<ul>
 								<li><a href="tour.html">Tour Page</a></li>
@@ -120,16 +139,17 @@
 								<li><a href="tour-carousel.html">Tour Carousel</a></li>
 								<li><a href="tour-details.html">Tour Details</a></li>
 							</ul>
+						</li> -->
+						<li class="dropdown">
+							<a href="#destinations">Destination</a>							
 						</li>
 						<li class="dropdown">
-							<a href="#">Destination</a>
-							<ul class="sub-menu">
-								<li><a href="destination.html">Destination</a></li>
-								<li><a href="destination-carousel.html">Destination Carousel</a></li>
-								<li><a href="destination-details.html">Destination Details</a></li>
-							</ul>
+							<a href="#packages">Packages</a>							
 						</li>
 						<li class="dropdown">
+							<a href="#gallery">Gallery</a>							
+						</li>
+						<!-- <li class="dropdown">
 							<a href="#">News</a>
 							<ul class="sub-menu">
 								<li class="dropdown">
@@ -161,7 +181,7 @@
 						</li>
 						<li>
 							<a href="contact.html">Contact</a>
-						</li>
+						</li> -->
 					</ul>
 	            </nav><!-- /.main-header__nav -->
 	            <div class="main-header__right">
@@ -184,6 +204,7 @@
 	        </div><!-- /.main-header__inner -->
 	    </div><!-- /.container-fluid -->
 	</header><!-- /.main-header -->
+<!-- /.main-header -->
 
 	<section class="hero-one">
 		<div class="container">
@@ -192,53 +213,7 @@
 				<h2 class="hero-one__title title bw-split-in-down">Leap & Live the Adventure </h2><!-- slider-title -->
 				<p class="hero-one__text sub-title bw-split-in-left">The shift into seamless travel planning, preserving the essence of discovery. It flourished through the trust we share with our travelers.</p><!-- /.hero-one__text -->
 			</div><!-- /.hero-one__content -->
-		</div><!-- /.container -->
-		<!-- <div class="hero-one__form">
-			<div class="banner-form wow fadeInUp" data-wow-duration='1500ms' data-wow-delay='300ms'>
-				<form class="banner-form__wrapper" action="tour-listing-2.html">
-					<div class="banner-form row gutter-x-30 align-items-center">
-						<div class="banner-form__control banner-form__col--1 banner-form__control--form">
-							<i class="icon icon-pin-2"></i>
-							<label for="location">Location</label>
-							<select name="location" class="selectpicker" id="location">
-								<option value="select">Where to next</option>
-								<option value="Australia">Australia</option>
-								<option value="Spain">Spain</option>
-								<option value="Africa">Africa</option>
-								<option value="Europe">Europe</option>
-							</select>
-						</div>
-						<div class="banner-form__control banner-form__col--2">
-							<i class="icon icon-luggage--1"></i>
-							<label for="type2">Type</label>
-							<select name="type" class="selectpicker" id="type2">
-								<option value="select">Booking Type</option>
-								<option value="Spain">Spain</option>
-								<option value="africa">Beach</option>
-								<option value="europe">Discovery</option>
-							</select>
-						</div>
-
-						<div class="banner-form__control banner-form__control--date banner-form__col--3">
-							<i class="icon icon-calendar-1"></i>
-							<label for="date">Date Form</label>
-							<input class="travhub-multi-datepicker" id="date" type="text" name="date" placeholder="Select Date">
-						</div>
-
-						<div class="banner-form__control banner-form__col--4">
-							<i class="icon icon-traveler-with-a-suitcase-1"></i>
-							<label for="guests">Guests</label>
-							<input id="guests" type="number" value="02" name="guests" placeholder="2">
-						</div>
-
-						<div class="banner-form__control banner-form__button banner-form__col--5">
-							<button class="travhub-btn" type="submit"><span>  Search <i class="icon-magnifying-glass-1"></i></span></button>
-						</div>
-
-					</div>
-				</form>
-			</div>
-		</div> -->
+		</div><!-- /.container -->	
 		<div class="hero-one__shape-one" style="background-image: url(assets/images/shapes/group-1-1.png);"></div><!-- /.hero-one__shape -->
 		<div class="hero-one__image">
 			<div class="hero-one__image-one travhub-splax" data-para-options='{
@@ -278,7 +253,7 @@
 		</div><!-- /.hero-one__shape-two -->
 	</section><!-- /.hero-one -->
 
-	<section class="destination-one">
+	<section id="destinations" class="destination-one">
 		<div class="container">
 			<div class="sec-title text-center">
 				<div class="sec-title__tagline bw-split-in-right">Destinations<img src="assets/images/shapes/sec-title-shape.png" alt="Travhub"></div>
@@ -425,7 +400,7 @@
 		</div>
 	</section><!-- why-choose-one -->
 	
-	<section class="tours-one">
+	<section id="packages" class="tours-one">
 		<div class="container">
 			<div class="sec-title text-center">
 				<div class="sec-title__tagline bw-split-in-right">Featured Tours<img src="assets/images/shapes/sec-title-shape.png" alt="Travhub"></div>
@@ -583,7 +558,7 @@
 		</div><!-- /.container -->
 	</section><!-- tours-one -->
 
-	<section class="gallery-one">
+	<section id="gallery" class="gallery-one">
 		<div class="container">
 			<div class="sec-title text-center">
 				<div class="sec-title__tagline bw-split-in-right">Our beautiful moment<img src="assets/images/shapes/sec-title-shape.png" alt="Travhub"></div>
@@ -1305,6 +1280,48 @@
 	
 	<!-- template js -->
 	<script src="assets/js/travhub.js"></script>
+	
+	<!-- Custom smooth scrolling functionality -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			// Handle smooth scrolling for anchor links
+			const anchorLinks = document.querySelectorAll('a[href^="#"]');
+			
+			anchorLinks.forEach(function(link) {
+				link.addEventListener('click', function(e) {
+					const targetId = this.getAttribute('href');
+					
+					// Only handle links that start with #
+					if (targetId.startsWith('#')) {
+						e.preventDefault();
+						
+						const targetSection = document.querySelector(targetId);
+						
+						if (targetSection) {
+							// Calculate offset for fixed header
+							const headerHeight = 100; // Adjust this value based on your header height
+							const targetPosition = targetSection.offsetTop - headerHeight;
+							
+							// Smooth scroll to the target
+							window.scrollTo({
+								top: targetPosition,
+								behavior: 'smooth'
+							});
+							
+							// Close mobile menu if open
+							const mobileNav = document.querySelector('.mobile-nav__wrapper');
+							if (mobileNav && mobileNav.classList.contains('opened')) {
+								const mobileNavToggler = document.querySelector('.mobile-nav__toggler');
+								if (mobileNavToggler) {
+									mobileNavToggler.click();
+								}
+							}
+						}
+					}
+				});
+			});
+		});
+	</script>
 </body>
 
 </html>
