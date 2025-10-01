@@ -5904,7 +5904,7 @@ h6 {
   width: 100%;
   height: 100%;
   content: '';
-  background-image: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9999999999999999) 100%);
+  background-image: linear-gradient(180deg, rgba(0,0,0,0) 15%, rgba(0,0,0,0.9999999999999999) 100%);
 }
 .tours-one__item::before{
   position: absolute;
@@ -12729,3 +12729,54 @@ input[type="number"] {
   }
 }
 
+
+/* -------------------------------------------------------------
+   Typography adjustments: one step smaller site-wide overrides
+   Placed at end to take precedence without touching originals
+-------------------------------------------------------------- */
+body {
+  font-size: 15px;
+}
+
+.travhub-btn {
+  font-size: 17px;
+}
+
+.sec-title__title {
+  font-size: 34px;
+}
+@media (min-width: 768px) {
+  .sec-title__title {
+    font-size: 46px;
+  }
+}
+
+.sec-title__text {
+  font-size: 16px;
+}
+@media (min-width: 768px) {
+  .sec-title__text {
+    font-size: 19px;
+  }
+}
+
+.tours-one__item__feature {
+  font-size: 13px;
+}
+
+.tours-one__item__price {
+  font-size: 30px;
+  line-height: 30px;
+}
+.tours-one__item__price span {
+  font-size: 22px;
+}
+
+.tours-one__item__title {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.tours-one__item__meta li {
+  font-size: 15px;
+}
