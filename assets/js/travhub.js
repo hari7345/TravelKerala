@@ -454,6 +454,56 @@
     }
   }
 
+  // WhatsApp floating button (global injection)
+  function injectWhatsAppStyles() {
+    if (document.getElementById('whatsapp-float-style')) return;
+    var style = document.createElement('style');
+    style.id = 'whatsapp-float-style';
+    style.type = 'text/css';
+    var css = ""
+      + ".whatsapp-float{position:fixed;right:20px;bottom:100px;z-index:1050;width:80px;height:80px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,0.2);transition:transform .2s ease,background .2s ease;}"
+      + ".whatsapp-float i{font-size:40px;line-height:1;}"
+      + ".whatsapp-float:hover{background:#1ebe5d;transform:translateY(-2px);}"
+      + ".whatsapp-float:focus{outline:none;box-shadow:0 0 0 4px rgba(37,211,102,0.25);}" 
+      + "@media (max-width: 575.98px){.whatsapp-float{right:16px;bottom:90px;width:70px;height:70px;}}";
+    style.appendChild(document.createTextNode(css));
+    document.head.appendChild(style);
+  }
+
+  function sanitizePhoneToE164Like(raw) {
+    if (!raw) return "";
+    var digits = String(raw).replace(/[^0-9+]/g, "");
+    if (digits[0] !== '+' && digits.length) {
+      // assume already country-coded elsewhere; return digits only
+      return digits;
+    }
+    return digits;
+  }
+
+  function injectWhatsAppFloat() {
+    if (document.querySelector('.whatsapp-float')) return;
+
+    var phone = window.TRAVHUB_WHATSAPP_NUMBER || document.body.getAttribute('data-whatsapp') || '';
+    phone = sanitizePhoneToE164Like(phone);
+    var message = 'Hello, I would like to know more about your tour packages.';
+    var href = '';
+    if (phone) {
+      href = 'https://wa.me/' + encodeURIComponent(phone) + '?text=' + encodeURIComponent(message);
+    } else {
+      href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(message);
+    }
+
+    var a = document.createElement('a');
+    a.className = 'whatsapp-float';
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.setAttribute('aria-label', 'Chat on WhatsApp');
+    a.innerHTML = '<i class="fab fa-whatsapp" aria-hidden="true"></i>';
+
+    document.body.appendChild(a);
+  }
+
 
   //Strech Column
   function travhub_stretch() {
@@ -566,6 +616,27 @@
         var count = $(".filter-layout").find(filterElement).length;
         $(this).append("<sup>[" + count + "]</sup>");
       });
+    }
+
+    // Inject WhatsApp floating button globally
+    try {
+      injectWhatsAppStyles();
+      injectWhatsAppFloat();
+    } catch (e) {
+      // fail-safe: do not break page if injection fails
+      // console && console.warn && console.warn('WhatsApp injection failed', e);
+    }
+
+    // Ensure back-to-top works regardless of other anchor smooth-scroll handlers
+    var backToTop = document.querySelector('.scroll-to-top');
+    if (backToTop) {
+      try { backToTop.setAttribute('href', '#top'); } catch (e) {}
+      backToTop.addEventListener('click', function(ev){
+        ev.preventDefault();
+        ev.stopPropagation();
+        $('html, body').stop(true).animate({ scrollTop: 0 }, 600);
+        return false;
+      }, true);
     }
   });
 
