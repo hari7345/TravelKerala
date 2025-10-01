@@ -12780,3 +12780,45 @@ body {
 .tours-one__item__meta li {
   font-size: 15px;
 }
+
+/*--------------------------------------------------------
+/ 06.a Preloader TK variant (striped animated text)
+/---------------------------------------------------------*/
+.preloader.preloader--tk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.preloader.preloader--tk .loaderInner {
+  position: static;
+  width: auto;
+  height: auto;
+}
+.preloader.preloader--tk .mask {
+  display: none;
+}
+.preloader.preloader--tk p {
+  position: static;
+  margin: 0;
+}
+.preloader__tk {
+  font-family: var(--travhub-heading-font);
+  font-weight: 800;
+  font-size: 56px;
+  letter-spacing: 4px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 200% 100%;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--travhub-base) 0 12px,
+    rgba(255,255,255,0.12) 12px 24px
+  );
+  animation: tkStripes 1.2s linear infinite;
+  text-transform: uppercase;
+}
+@keyframes tkStripes {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
+}
