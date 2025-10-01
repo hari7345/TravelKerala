@@ -2275,13 +2275,14 @@ h6 {
 .main-header__logo {
   display: flex;
   height: 100%;
-  padding: 27.5px 24px;
+  /* padding: 27.5px 24px; */
   position: relative;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--travhub-base);
+  background-color: #008000;
   border-radius: 30px 0px 30px 0px;
   width: auto;
+  overflow: hidden;
 }
 .main-header__btn {
   position: relative;
@@ -4513,13 +4514,13 @@ h6 {
   position: relative;
 }
 .destination-details__title{
-  font-size: 28px;
+  font-size: 36px;
   font-weight: 700;
   margin: 0 0 16px;
 }
 .destination-details__text{
-  font-size: 15px;
-  line-height: 26px;
+  font-size: 18px;
+  line-height: 30px;
   margin: 0 0 16px;
 }
 .destination-details__info{
@@ -4577,7 +4578,7 @@ h6 {
   color: var(--travhub-white);
 }
 .destination-details__info__title{
-  font-size: 16px;
+  font-size: 20px;
   font-family: var(--travhub-font);
   font-weight: 600;
   text-transform: capitalize;
@@ -4585,7 +4586,7 @@ h6 {
 }
 .destination-details__info__text{
   margin: 0;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 130%;
 }
 .destination-details__gutter{
@@ -4626,7 +4627,7 @@ h6 {
   bottom: auto;
 }
 .destination-details__pricing__sub-title{
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1;
   margin: 0 0 9px;
   transition: all 0.3s;
@@ -4635,7 +4636,7 @@ h6 {
   color: var(--travhub-white);
 }
 .destination-details__pricing__title{
-  font-size: 35px;
+  font-size: 42px;
   font-weight: 500;
   letter-spacing: -1.07px;
   line-height: 1;
@@ -4646,9 +4647,9 @@ h6 {
   color: var(--travhub-white);
 }
 .destination-details__pricing__text{
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: -0.39px;
-  line-height: 21px;
+  line-height: 26px;
   margin: 0 0 28px;
   transition: all 0.3s;
 }
@@ -4682,7 +4683,7 @@ h6 {
   transition-timing-function: linear;
 }
 .destination-details__pricing__list-title{
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: var(--travhub-black);
   text-align: left;
@@ -4701,9 +4702,9 @@ h6 {
 }
 .destination-details__pricing__list li{
   position: relative;
-  font-size: 15px;
+  font-size: 17px;
   padding-left: 17px;
-  line-height: 21px;
+  line-height: 26px;
   color: var(--travhub-text);
   margin-top: 10px;
   transition: all 0.3s;
