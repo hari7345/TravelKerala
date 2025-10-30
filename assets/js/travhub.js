@@ -638,6 +638,22 @@
         return false;
       }, true);
     }
+
+    // Make tour cards clickable (navigate to details page when clicking anywhere on the card)
+    try {
+      var tourCards = document.querySelectorAll('.tours-one__item');
+      tourCards.forEach(function(card){ card.style.cursor = 'pointer'; });
+      $(document).on('click', '.tours-one__item', function(e){
+        // Ignore clicks originating from interactive elements inside the card
+        if ($(e.target).closest('a, button, .card__popup, .video-popup, .tours-one__item__btn, .tours-one__item__wishlist').length) {
+          return;
+        }
+        var link = $(this).find('.tours-one__item__title a').attr('href');
+        if (link) {
+          window.location.href = link;
+        }
+      });
+    } catch (e) {}
   });
 
   // window scroll event
