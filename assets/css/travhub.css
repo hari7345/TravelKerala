@@ -5926,10 +5926,19 @@ h6 {
 }
 .tours-one__item img{
   width: 100%;
-  height: auto;
-  min-height: 500px;
+  height: 420px;
   object-fit: cover;
   transition: all ease 0.3s;
+}
+@media (max-width: 991px){
+  .tours-one__item img{
+    height: 360px;
+  }
+}
+@media (max-width: 575px){
+  .tours-one__item img{
+    height: 280px;
+  }
 }
 .tours-one__item:hover img{
   transform: scale(1.05) rotate(1.1deg);
