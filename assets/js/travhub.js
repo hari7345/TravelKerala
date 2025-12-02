@@ -483,7 +483,7 @@
   function injectWhatsAppFloat() {
     if (document.querySelector('.whatsapp-float')) return;
 
-    var phone = window.TRAVHUB_WHATSAPP_NUMBER || document.body.getAttribute('data-whatsapp') || '7907543837';
+    var phone = window.TRAVHUB_WHATSAPP_NUMBER || document.body.getAttribute('data-whatsapp') || '+919847730845';
     phone = sanitizePhoneToE164Like(phone);
     var message = 'Hello, I would like to know more about your tour packages.';
     var href = '';
